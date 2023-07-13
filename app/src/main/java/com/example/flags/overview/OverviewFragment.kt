@@ -18,6 +18,7 @@ class OverviewFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentOverViewBinding.inflate(inflater)
+        binding.animationView.repeatCount = 1
 
         binding.lifecycleOwner = this
 

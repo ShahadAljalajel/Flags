@@ -20,7 +20,6 @@ class PhotoAdapter : androidx.recyclerview.widget.ListAdapter<Flag,
             binding.photo = MarsPhoto
             binding.executePendingBindings()
         }
-
     }
 
     override fun onCreateViewHolder(

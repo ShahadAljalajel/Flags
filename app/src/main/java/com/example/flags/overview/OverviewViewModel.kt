@@ -1,6 +1,5 @@
 package com.example.flags.overview
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,7 +10,7 @@ import kotlinx.coroutines.launch
 
 enum class ApiStatus { LOADING, ERROR, DONE }
 
-class OverviewViewModel: ViewModel() {
+class OverviewViewModel : ViewModel() {
 
     private val _status = MutableLiveData<ApiStatus>()
 
@@ -19,7 +18,6 @@ class OverviewViewModel: ViewModel() {
 
     private val _photos = MutableLiveData<List<Flag>>()
     val photos: LiveData<List<Flag>> = _photos
-
 
     init {
         getMarsPhotos()
@@ -34,10 +32,9 @@ class OverviewViewModel: ViewModel() {
                 _photos.value = FlagsApiService.FlagsApi.retrofitService.getPhotos().data
                 _status.value = ApiStatus.DONE
 
-            }catch (e:Exception){
+            } catch (e: Exception) {
                 _status.value = ApiStatus.ERROR
                 _photos.value = listOf()
-                Log.d("OverviewViewModel","bbbbbbbb : $e")
             }
         }
 

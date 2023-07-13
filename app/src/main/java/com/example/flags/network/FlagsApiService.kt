@@ -6,7 +6,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-
 private val BASE_URL = "https://countriesnow.space/api/v0.1/countries/flag/"
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
