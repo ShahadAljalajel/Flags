@@ -19,8 +19,7 @@ class FlagsApiService {
 
     interface FlagsApiService {
         @GET("images")
-        suspend fun getPhotos(): FlagContainer // List<Flag>
-
+        suspend fun getPhotos(): FlagContainer
     }
 
     object FlagsApi {

@@ -20,10 +20,10 @@ class OverviewViewModel : ViewModel() {
     val photos: LiveData<List<Flag>> = _photos
 
     init {
-        getMarsPhotos()
+        getFlagsPhotos()
     }
 
-    private fun getMarsPhotos() {
+    private fun getFlagsPhotos() {
 
         viewModelScope.launch {
             _status.value = ApiStatus.LOADING
@@ -37,6 +37,5 @@ class OverviewViewModel : ViewModel() {
                 _photos.value = listOf()
             }
         }
-
     }
 }
